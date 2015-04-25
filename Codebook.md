@@ -3,6 +3,7 @@ title: "Codebook.md"
 output: html_document
 ---
 
+## Output Details
 The tidyoutdata.txt has 14220 rows and 4 columns.
 
 The output in tidyoutdata.txt has the following columns
@@ -116,3 +117,15 @@ If there 'time' or 'freq' in the feature names, it means the variable is from ti
 ### calculatedmean
 This column lists the average of each feature for each activity and each subject
           
+
+## Data Transformations
+
+1. There were 561 features that were input to this process. These are listed in the feature.txt in this repository. Only the features with the word 'mean' or 'std' were picked up from the 561 features. Thus 79 features were considered for this processing.
+
+2. The following transformations were performed on the feature names before they were output to the tidy data so that the feature names were more readable.
+    * the 'x','y', 'z' at the end of the feature name was replaced with '-x','-y','-z' respectively so that the axial direction was explicit 
+    * '()' bracket symbol was removed from the feature name
+    * Occurence of the word 'bodybody' was replaced with 'body'
+    * 'acc' was made more readable by replacing it with 'accelerometer'
+    * 't' indicates time and 'f' indicates 'frequency'. So 'tbody' was replaced with 'timebody' and similar changes were made for words - fbody, tgravity and fgravity
+    * all feature names were changed to same case - lower case for more readability
